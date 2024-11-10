@@ -1,27 +1,26 @@
-// src/App.jsx
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import TaskPage from './pages/Task';
-import EditeProfile from './pages/EditeProfile'; // Import halaman EditProfile
+import EditeProfile from './pages/EditeProfile'; 
 import './App.css';
 
 const App = () => {
   const [user, setUser] = useState(null);
 
   const handleLogin = (userData) => {
-    setUser(userData); // Set user ketika login berhasil
+    setUser(userData); 
   };
 
   const handleSignOut = () => {
-    setUser(null); // Set user menjadi null ketika logout
+    setUser(null); 
   };
 
   const handleUpdateProfile = (updatedUser) => {
     setUser({
       ...user,
       ...updatedUser,
-    }); // Update profil user
+    }); 
   };
 
   return (
