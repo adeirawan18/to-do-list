@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import React, { useState } from 'react';
 
 const Login = ({ onLogin }) => {
@@ -10,17 +9,16 @@ const Login = ({ onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Tentukan kredensial yang benar
     const correctEmail = "irawanade142@gmail.com";
     const correctPassword = "12345678";
 
     // Validasi email dan password
     if (email === correctEmail && password === correctPassword) {
       const userData = { email, password };
-      onLogin(userData); // Memanggil fungsi onLogin dari App.jsx
-      setError(''); // Bersihkan pesan kesalahan jika berhasil
+      onLogin(userData); 
+      setError(''); 
     } else {
-      setError('Email atau password salah'); // Tampilkan pesan kesalahan
+      setError('Email atau password salah'); 
     }
   };
 
@@ -47,8 +45,6 @@ const Login = ({ onLogin }) => {
             required
           />
         </div>
-
-        {error && <p className="error-message">{error}</p>} {/* Tampilkan pesan kesalahan */}
 
         <button type="submit">Login</button>
       </form>
