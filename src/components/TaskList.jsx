@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCheck, FaTrashAlt } from 'react-icons/fa'; // Import ikon dari react-icons
+import { FaCheck, FaTrashAlt } from 'react-icons/fa'; 
 
 const TaskList = ({ tasks, onDone, onDelete, isCompleted, title }) => (
   <div className="task-list">
@@ -14,7 +14,6 @@ const TaskList = ({ tasks, onDone, onDelete, isCompleted, title }) => (
             <FaCheck />
           </button>
         )}
-        {/* Tampilkan tombol Delete hanya jika task belum selesai */}
         {!isCompleted && (
           <button onClick={() => onDelete(index)} className="delete-button">
             <FaTrashAlt />

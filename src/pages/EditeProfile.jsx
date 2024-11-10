@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaUser, FaArrowLeft } from 'react-icons/fa'; // Tambahkan FaArrowLeft untuk tombol back
 import { useNavigate } from 'react-router-dom'; // Tambahkan useNavigate untuk navigasi
 
@@ -7,7 +7,7 @@ const EditProfile = ({ user, onUpdateProfile }) => {
   const [imageUrl, setImageUrl] = useState(user.profileImage || '');
   const [username, setUsername] = useState(user.username || '');
   const [email, setEmail] = useState(user.email || '');
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState(user.password || ''); // Inisialisasi password dari props
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Mencegah submit form default
@@ -16,11 +16,11 @@ const EditProfile = ({ user, onUpdateProfile }) => {
       profileImage: imageUrl,
       username,
       email,
-      password,
+      password, // Mengirimkan password yang sudah diubah
     };
 
     onUpdateProfile(updatedProfile);
-    setPassword('');
+    setPassword(''); // Reset password setelah submit
   };
 
   // Fungsi untuk kembali ke halaman sebelumnya
@@ -83,7 +83,7 @@ const EditProfile = ({ user, onUpdateProfile }) => {
           <div className="form-group">
             <label>Password:</label>
             <input
-              type="password"
+              type="password" // Input type password untuk menyembunyikan teks
               placeholder="Enter your new password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
