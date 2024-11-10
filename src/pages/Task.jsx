@@ -1,6 +1,5 @@
-// src/pages/Task.jsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Pastikan ini diimport
+import { useNavigate } from 'react-router-dom'; 
 import TaskForm from '../components/TaskForm';
 import TaskList from '../components/TaskList';
 import { FaUser, FaEdit, FaSignOutAlt } from 'react-icons/fa';
@@ -8,7 +7,7 @@ import { FaUser, FaEdit, FaSignOutAlt } from 'react-icons/fa';
 const TaskPage = ({ user, onSignOut }) => {
   const [tasks, setTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
-  const navigate = useNavigate(); // Menggunakan useNavigate
+  const navigate = useNavigate(); 
 
   const addTask = (task) => {
     setTasks([...tasks, task]);
@@ -24,9 +23,9 @@ const TaskPage = ({ user, onSignOut }) => {
     setTasks(tasks.filter((_, i) => i !== index));
   };
 
-  // Fungsi navigasi ke halaman edit profile
+
   const handleEditProfile = () => {
-    navigate('/edit-profile'); // Pastikan rute ini sesuai
+    navigate('/edit-profile'); 
   };
 
   return (
