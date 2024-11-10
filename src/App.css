@@ -350,8 +350,7 @@ h2 {
 .edit-profile-page {
   background-color: #1D1825; 
   padding: 2rem;
-  max-width: 400px;
-  width: 100%;
+  width: 300px;
   margin: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
